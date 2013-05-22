@@ -11,6 +11,13 @@ template '/home/ldk/.gitconfig' do
   source 'ldk/gitconfig.erb'
 end
 
+directory '/home/ldk/bin' do
+  owner 'ldk'
+  group 'users'
+  mode '0755'
+  action :create
+end
+
 remote_file '/home/ldk/bin/hub' do
   source 'http://defunkt.io/hub/standalone'
   mode '0755'
