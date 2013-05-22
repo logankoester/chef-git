@@ -7,14 +7,6 @@
 # All rights reserved - Do Not Redistribute
 #
 
-# Determine a user's shell
-# Example: which_shell?('ldk') => 'bash'
-def which_shell?(login)
-  line = File.readlines('/etc/passwd').select { |u| u =~ /`^#{Regexp.escape(login)}/ }
-  return false unless line
-  File.basename( line.split(':').last )
-end
-
 template '/home/ldk/.gitconfig' do
   source 'ldk/gitconfig.erb'
   owner 'ldk'
@@ -38,6 +30,14 @@ remote_file '/home/ldk/bin/hub' do
 end
 
 ruby_block 'alias git to hub' do
+
+  # Determine a user's shell
+  # Example: which_shell?('ldk') => 'bash'
+  def which_shell?(login)
+    line = File.readlines('/etc/passwd').select { |u| u =~ /^#{Regexp.escape(login)}/ }
+    return false if line.empty?
+    File.basename( line.first.split(':').last ).strip
+  end
 
   block do
     case which_shell? 'ldk'
