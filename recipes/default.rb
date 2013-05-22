@@ -17,7 +17,5 @@ end
 
 bash "compile and install git-extras" do
   cwd "#{Chef::Config[:file_cache_path]}/git-extras"
-  user 'ldk'
-  group 'users'
   code 'sudo make install'
 end
