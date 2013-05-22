@@ -9,6 +9,9 @@
 
 template '/home/ldk/.gitconfig' do
   source 'ldk/gitconfig.erb'
+  owner 'ldk'
+  group 'users'
+  mode '0755'
 end
 
 directory '/home/ldk/bin' do
@@ -20,6 +23,8 @@ end
 
 remote_file '/home/ldk/bin/hub' do
   source 'http://defunkt.io/hub/standalone'
+  owner 'ldk'
+  group 'users'
   mode '0755'
   action :create_if_missing
 end
