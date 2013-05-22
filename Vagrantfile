@@ -24,8 +24,7 @@ Vagrant.configure('2') do |config|
         'recipe[ldk]',
         'recipe[ldk::home]',
         'recipe[ldk::zsh]',
-        'recipe[git::default]',
-        'recipe[git::ldk]'
+        'recipe[git::default]'
     ]
   end
 end

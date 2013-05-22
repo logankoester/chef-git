@@ -12,22 +12,11 @@ Then run `berks` to install it.
 
 ## Default
 
-Installs git & [git-extras](https://github.com/visionmedia/git-extras)
-system-wide.
+Installs git & [git-extras](https://github.com/visionmedia/git-extras) system-wide.
 
 ### Usage
 
 Add `recipe[git::default]` to your run list.
-
-## ldk
-
-* Personal ~/.gitconfig
-* Installs hub http://defunkt.io/hub/ to ~/bin
-* Aliases git to hub.
-
-### Usage
-
-Add `recipe[git::ldk]` to your run list.
 
 ## Development
 
