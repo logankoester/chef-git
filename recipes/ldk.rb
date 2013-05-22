@@ -30,6 +30,7 @@ remote_file '/home/ldk/bin/hub' do
 end
 
 ruby_block 'alias git to hub' do
+  Chef::Log.info 'Aliasing git to hub'
 
   # Determine a user's shell
   # Example: which_shell?('ldk') => 'bash'
@@ -42,12 +43,15 @@ ruby_block 'alias git to hub' do
   block do
     case which_shell? 'ldk'
     when 'zsh'
+      Chef::Log.info 'Adding alias to .zshrc'
       file = Chef::Util::FileEdit.new('/home/ldk/.zshrc')
       file.insert_line_if_no_match 'alias -r git="hub"', 'alias -r git="hub"'
       file.write_file
     when 'bash'
+      Chef::Log.info 'Adding alias to .bash/alias.sh'
       file = Chef::Util::FileEdit.new('/home/ldk/.bash/alias.sh')
       file.insert_line_if_no_match "alias git='hub'", "alias git='hub'"
+      file.write_file
     end
   end
 end
