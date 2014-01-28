@@ -7,6 +7,8 @@
 # All rights reserved - Do Not Redistribute
 #
 
+include_recipe 'pacman'
+
 package('git') { action :install }
 
 git "#{Chef::Config[:file_cache_path]}/git-extras" do
@@ -18,4 +20,13 @@ end
 bash "compile and install git-extras" do
   cwd "#{Chef::Config[:file_cache_path]}/git-extras"
   code 'sudo make install'
+end
+
+%w{ autoconf automake bison flex }.each do |pkg|
+  package('git') { action :install }
+end
+
+%w{ codesearch jq gist gister }.each do |pkg|
+  pacman_aur(pkg){ action :build }
+  pacman_aur(pkg){ action :install }
 end
