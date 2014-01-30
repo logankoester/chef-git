@@ -22,7 +22,7 @@ bash "compile and install git-extras" do
   code 'sudo make install'
 end
 
-%w{ autoconf automake bison flex }.each do |pkg|
+%w{ autoconf automake bison flex xclip }.each do |pkg|
   package('git') { action :install }
 end
 
