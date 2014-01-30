@@ -23,7 +23,7 @@ bash "compile and install git-extras" do
 end
 
 %w{ autoconf automake bison flex xclip }.each do |pkg|
-  package('pkg') { action :install }
+  package(pkg) { action :install }
 end
 
 %w{ codesearch jq gist gister }.each do |pkg|
