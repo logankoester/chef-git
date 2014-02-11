@@ -27,6 +27,7 @@ end
 end
 
 %w{ codesearch jq gist gister }.each do |pkg|
-  pacman_aur(pkg){ action :build }
-  pacman_aur(pkg){ action :install }
+  pacman_aur(pkg){ action [:build, :install] }
 end
+
+pacman_aur('gitsh'){ action [:build, :install] }
