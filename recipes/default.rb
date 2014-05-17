@@ -10,6 +10,7 @@
 include_recipe 'pacman'
 
 package('git') { action :install }
+package('hub') { action :install }
 
 git "#{Chef::Config[:file_cache_path]}/git-extras" do
   repository 'git://github.com/visionmedia/git-extras.git'
