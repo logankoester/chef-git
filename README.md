@@ -1,5 +1,7 @@
 # git cookbook
 
+A git cookbook for Arch Linux.
+
 ## Installation
 
 Using [Berkshelf](http://berkshelf.com/), add the git cookbook to your Berksfile.
