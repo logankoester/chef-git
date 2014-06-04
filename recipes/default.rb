@@ -1,12 +1,3 @@
-#
-# Cookbook Name:: git
-# Recipe:: default
-#
-# Copyright (C) 2013 Logan Koester
-# 
-# All rights reserved - Do Not Redistribute
-#
-
 include_recipe 'pacman'
 
 package('git') { action :install }

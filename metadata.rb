@@ -1,9 +1,9 @@
 name             'git'
 maintainer       'Logan Koester'
 maintainer_email 'logan@logankoester.com'
-license          'All rights reserved'
-description      'Installs git and git-extras'
+license          'MIT'
+description      'A Chef cookbook to install and configure git and some extras'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version          '0.2.0'
+version          '0.3.0'
 
 depends 'pacman'
