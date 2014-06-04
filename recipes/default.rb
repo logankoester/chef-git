@@ -23,5 +23,3 @@ end
 end
 
 pacman_aur('gitsh'){ action [:build, :install] }
-
-pacman_aur('gitsh'){ action [:build, :install] }
