@@ -1,6 +1,9 @@
 CHANGELOG
 =========
 
+### v0.3.2
+- `gister` package removed from AUR.
+
 ### v0.3.1
 - `jq` package has been made official.
 
