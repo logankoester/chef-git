@@ -1,6 +1,9 @@
 CHANGELOG
 =========
 
+### v0.3.1
+- `jq` package has been made official.
+
 ### v0.3.0
 - First public release
 

@@ -2,6 +2,7 @@ include_recipe 'pacman'
 
 package('git') { action :install }
 package('hub') { action :install }
+package('jq') { action :install }
 
 git "#{Chef::Config[:file_cache_path]}/git-extras" do
   repository 'git://github.com/visionmedia/git-extras.git'
@@ -18,7 +19,7 @@ end
   package(pkg) { action :install }
 end
 
-%w{ codesearch jq gist gister }.each do |pkg|
+%w{ codesearch gist gister }.each do |pkg|
   pacman_aur(pkg){ action [:build, :install] }
 end
 
