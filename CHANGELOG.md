@@ -1,6 +1,9 @@
 CHANGELOG
 =========
 
+### v0.3.3
+- `codesearch` package broken in AUR.
+
 ### v0.3.2
 - `gister` package removed from AUR.
 

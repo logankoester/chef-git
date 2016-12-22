@@ -19,7 +19,7 @@ end
   package(pkg) { action :install }
 end
 
-%w{ codesearch gist }.each do |pkg|
+%w{ gist }.each do |pkg|
   pacman_aur(pkg){ action [:build, :install] }
 end
 
