@@ -20,7 +20,7 @@ end
 end
 
 %w{ gist }.each do |pkg|
-  pacman_aur(pkg){ action [:build, :install] }
+  pacman_aur(pkg){ action [:install] }
 end
 
-pacman_aur('gitsh'){ action [:build, :install] }
+pacman_aur('gitsh'){ action [:install] }
